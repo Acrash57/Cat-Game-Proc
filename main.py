@@ -15,7 +15,7 @@ while True:
     if option == '1' and cat_attributes["energy"] > 0:
         print("Your cat has played!")
         cat_attributes["energy"] -= 1
-        cat_attributes["weight"] -= 0.1
+        cat_attributes["weight"] -= 0.10
     elif option == '2':
         print("Your cat has trained!")
         cat_attributes["intelligence"] += 1
@@ -28,7 +28,7 @@ while True:
         cat_attributes["energy"] += 2 
     elif option == '5':
         print("Your cat has eaten!")
-        cat_attributes["weight"] += 0.1 
+        cat_attributes["weight"] += 0.10
 
     if cat_attributes['energy'] == 0:
         print("Your cat is very tired it cannot play again, you might want to let it sleep")
