@@ -1,4 +1,5 @@
-import time 
+import time
+import random
 cat_attributes = {
     "intelligence": 50,
     "energy": 5,
@@ -17,6 +18,13 @@ while True:
         time.sleep(1) 
         cat_attributes["energy"] -= 1
         cat_attributes["weight"] -= 0.10
+        num1 = random.randint(0,10)
+        num2 = random.randint(0,10)
+        if num1 == num2:
+            print(f"{name} has hit there head into the table whilst playing")
+            time.sleep(1) 
+            print(f"{name} has lost some intelligence :(")
+            cat_attributes["intelligence"] -= 15
         if cat_attributes["energy"] == 0:
             print("Your cat is very tired it cannot play again, you might want to let it sleep")
             time.sleep(1.5)
@@ -54,6 +62,10 @@ while True:
         time.sleep(1) 
         print("Congraultions!")
         time.sleep(1)
+    if cat_attributes["intelligence"] <= 30: 
+        print(f"{name} has developed mental retardation due to low intelligence and left the house :(")
+        time.sleep(1.5) 
+        quit() 
     if cat_attributes["energy"] >= 15:
         print(f"{name} has too much energy its advised to let it play")
         time.sleep(1.5) 
