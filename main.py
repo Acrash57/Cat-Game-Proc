@@ -38,7 +38,7 @@ while True:
         num1 = random.randint(0,15)
         num2 = random.randint(0,15)
         if num1 == num2:
-            print(f"{name} has hit there head into the table whilst playing")
+            print(f"{name} has hit their head into the table whilst playing")
             time.sleep(1) 
             print(f"{name} has lost some intelligence :(")
             cat_attributes["intelligence"] -= 15
