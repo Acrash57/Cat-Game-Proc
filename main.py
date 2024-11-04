@@ -5,10 +5,27 @@ cat_attributes = {
     "energy": 5,
     "weight": 5,
 }
+print("Welcome to my cat game!")
 
-print("Welcome to my cat game!") 
-name = input("Enter the name of your cat: ")
-colour = input("What is its colour: ")
+
+
+def namecheck(): 
+    name = input("Enter the name of your cat: ")
+    while name.isnumeric() == True or name == '': 
+        name = input("Enter a valid name: ")
+    else:
+        return name
+name = namecheck()
+
+def colourcheck():
+    colour = input("What is its colour: ")
+    while colour.isnumeric() == True or colour == '':
+        colour = input("Enter a valid colour: ")
+    else:
+        return colour
+colour = colourcheck() 
+
+
 
 while True:
     option = input("What would you like to do? \n1. Play with your cat \n2. Train your cat \n3. Show stats \n4. Let your cat sleep \n5. Feed your cat: ")
@@ -18,8 +35,8 @@ while True:
         time.sleep(1) 
         cat_attributes["energy"] -= 1
         cat_attributes["weight"] -= 0.10
-        num1 = random.randint(0,10)
-        num2 = random.randint(0,10)
+        num1 = random.randint(0,15)
+        num2 = random.randint(0,15)
         if num1 == num2:
             print(f"{name} has hit there head into the table whilst playing")
             time.sleep(1) 
@@ -28,23 +45,28 @@ while True:
         if cat_attributes["energy"] == 0:
             print("Your cat is very tired it cannot play again, you might want to let it sleep")
             time.sleep(1.5)
+
     elif option == '2':
         print("Your cat has trained!")
         time.sleep(1) 
         cat_attributes["intelligence"] += 2
+
     elif option == '3':
         print(f"{name}'s Attributes")
         for x in cat_attributes:
             print(f"{x} = {cat_attributes[x]}")
-        time.sleep(1.5) 
+        time.sleep(1.5)
+
     elif option =='4':
         print("Your cat has taken a nap!")
         time.sleep(1) 
         cat_attributes["energy"] += 2 
+
     elif option == '5':
         print("Your cat has eaten!")
         time.sleep(1) 
         cat_attributes["weight"] += 0.20
+
 
 
     if cat_attributes["weight"] < 3.5: 
@@ -60,13 +82,13 @@ while True:
     if cat_attributes["intelligence"] >= 70:
         print(f"{name} has attained high intelligence and found a lost 5 pound note!")
         time.sleep(1) 
-        print("Congraultions!")
+        print("Congratulations!")
         time.sleep(1)
     if cat_attributes["intelligence"] <= 30: 
-        print(f"{name} has developed mental retardation due to low intelligence and left the house :(")
+        print(f"{name} has developed cognitive dysfunction syndrome due to low intelligence and got lost outside :(")
         time.sleep(1.5) 
         quit() 
     if cat_attributes["energy"] >= 15:
-        print(f"{name} has too much energy its advised to let it play")
+        print(f"{name} has too much energy it's advised to let {name} play")
         time.sleep(1.5) 
 
